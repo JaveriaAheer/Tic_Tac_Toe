@@ -1,0 +1,133 @@
+/* Full-screen gradient background */
+body, html, .game-container {
+    /* margin: 0; */
+    /* padding: 0; */
+    /* min-height: 100vh; */
+    background-image: url('../img/img1.jpg'); /* Adjust path based on your project structure */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+  }
+  .game-container{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #1a0033, #330066, #ff0066); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  /* Game Box with full blur and glowing border */
+  .game-box {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  /* Title */
+  .game-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  
+  /* Grid Board */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  /* Game Cells */
+.cell {
+    width: 110px;
+    height: 110px;
+    font-size: 3.8rem;
+    font-weight: bold;
+    background-color: #2e005f;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: inset 0 0 10px #000;
+    position: relative; /* Added for better control */
+    display: flex; /* Added for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+  }
+  
+  /* Remove the :before pseudo-element since it's causing duplication */
+  .cell:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Glowing X and O - Apply directly to the cell with symbol */
+  .cell[data-symbol="X"] {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff, 
+                0 0 20px #00eaff, 
+                0 0 20px #00eaff;
+  }
+  
+  .cell[data-symbol="O"] {
+    color: #ff3cac;
+    text-shadow: 0 0 10px #ff3cac, 
+                0 0 20px #ff3cac, 
+                0 0 20px #ff3cac;
+  }
+  /* Popup overlay */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff00ff;
+    text-align: center;
+  }
+  
+  .popup h2 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .restart-button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    background-color: #00cc66;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00cc66;
+  }
+  
+  .restart-button:hover {
+    background-color: #00b359;
+  }
+  
